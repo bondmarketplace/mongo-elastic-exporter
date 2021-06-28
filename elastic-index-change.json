@@ -1,0 +1,8 @@
+{
+    "properties": {
+      "PreviousVersions": { 
+        "type": "object",
+        "enabled": false
+      }
+    }
+}

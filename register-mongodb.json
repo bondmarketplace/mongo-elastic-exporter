@@ -1,0 +1,20 @@
+{
+    "name": "mongo-source",
+    "config": {
+        "connector.class" : "io.debezium.connector.mongodb.MongoDbConnector",
+        "mongodb.hosts" : "rs0/mongodb:27017",
+        "mongodb.name" : "mongodb",
+        "mongodb.user" : "root",
+        "mongodb.password" : "example",
+        "database.include.list" : "golan",
+        "tasks.max": "1",
+        "database.history.kafka.bootstrap.servers": "kafka:9092",
+        "database.history.kafka.topic": "schema-changes.mediastream",
+        "internal.key.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "internal.value.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "transforms": "unwrap",
+        "transforms.unwrap.type": "io.debezium.connector.mongodb.transforms.ExtractNewDocumentState",
+        "transforms.unwrap.array.encoding": "document"
+    }
+}
